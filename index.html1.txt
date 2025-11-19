@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Drive Invite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .pattern-bg {
+            background-color: #0f172a;
+            background-image: radial-gradient(#334155 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="pattern-bg text-white min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-lg w-full bg-slate-900 rounded-3xl shadow-2xl overflow-hidden border border-slate-700 relative">
+        
+        <!-- Company Header -->
+        <div class="bg-slate-950 py-4 text-center border-b border-slate-800">
+            <h1 class="text-[10px] md:text-xs font-black text-slate-400 tracking-[0.15em] uppercase px-4">
+                Starnext Consultancy Services Private Limited
+            </h1>
+        </div>
+
+        <!-- Top Badge -->
+        <div class="absolute top-[48px] right-0 bg-yellow-400 text-slate-900 font-bold px-6 py-2 rounded-bl-2xl z-10 shadow-lg">
+            THIS FRIDAY!
+        </div>
+
+        <!-- Header Image / Hero -->
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-8 text-center relative overflow-hidden">
+            <div class="absolute opacity-20 -left-10 -top-10 text-9xl text-white">
+                <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h2 class="text-lg font-medium text-blue-200 uppercase tracking-widest mb-2">Open Office Event</h2>
+            <h1 class="text-4xl md:text-5xl font-black text-white leading-tight mb-2">
+                MEGA JOB<br>DRIVE
+            </h1>
+            <p class="text-blue-100 font-light">Bring your CV. Leave with a career.</p>
+        </div>
+
+        <!-- Key Details Grid -->
+        <div class="grid grid-cols-2 gap-0 border-b border-slate-700">
+            <div class="p-6 border-r border-slate-700 text-center hover:bg-slate-800 transition">
+                <i class="fa-regular fa-calendar-check text-2xl text-yellow-400 mb-2"></i>
+                <p class="text-slate-400 text-sm">DATE</p>
+                <p class="font-bold text-lg">This Friday</p>
+            </div>
+            <div class="p-6 text-center hover:bg-slate-800 transition">
+                <i class="fa-regular fa-clock text-2xl text-yellow-400 mb-2"></i>
+                <p class="text-slate-400 text-sm">TIME</p>
+                <p class="font-bold text-lg">10:00 AM - 4:00 PM</p>
+            </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="p-8 space-y-6">
+            
+            <!-- Hooks -->
+            <div class="space-y-3">
+                <h3 class="text-xl font-bold text-white border-l-4 border-blue-500 pl-3">Why Visit Our Office?</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-center text-slate-300">
+                        <i class="fa-solid fa-bolt text-yellow-400 mr-3 w-5"></i>
+                        On-the-spot Interviews
+                    </li>
+                    <li class="flex items-center text-slate-300">
+                        <i class="fa-solid fa-file-signature text-yellow-400 mr-3 w-5"></i>
+                        Instant Offer Letter & Joining in One Day
+                    </li>
+                    <li class="flex items-center text-slate-300">
+                        <i class="fa-solid fa-user-group text-yellow-400 mr-3 w-5"></i>
+                        Meet the Leadership Team
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Roles Section (Editable) -->
+            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                <h4 class="text-sm text-slate-400 uppercase tracking-wider mb-3">We Are Hiring For:</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-sm font-medium border border-blue-600/30">Sales Executives</span>
+                    <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-sm font-medium border border-blue-600/30">Customer Support</span>
+                    <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-sm font-medium border border-blue-600/30">Developers</span>
+                    <span class="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-sm font-medium border border-blue-600/30">+ More</span>
+                </div>
+            </div>
+
+            <!-- Address Copy Section -->
+            <div class="text-center mt-6">
+                <p class="text-slate-400 mb-2 text-sm">LOCATION</p>
+                <div class="bg-slate-950 p-3 rounded-lg border border-slate-700 flex justify-between items-center group cursor-pointer" onclick="copyAddress()">
+                    <div class="text-left">
+                        <p class="font-bold text-white" id="office-address">Meghamala Apartment road, Kumar Basti, Srinivasa Nagar, Ameerpet, Hyderabad, Telangana 500016</p>
+                    </div>
+                    <div class="bg-slate-800 p-2 rounded text-slate-400 group-hover:text-white group-hover:bg-blue-600 transition">
+                        <i class="fa-regular fa-copy"></i>
+                    </div>
+                </div>
+                <p id="copy-msg" class="text-green-400 text-xs mt-2 h-4 opacity-0 transition-opacity">Address copied to clipboard!</p>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="mt-8">
+                <a href="https://chat.whatsapp.com/G1vNAFUUJKH3S7JxZBHDoy?mode=hqrc" target="_blank" class="block w-full bg-green-500 hover:bg-green-600 text-white font-black text-center py-4 rounded-xl transition transform hover:-translate-y-1 shadow-lg shadow-green-500/20 text-lg uppercase flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-3xl"></i>
+                    <span>Join Group to Register</span>
+                </a>
+                <p class="text-center text-slate-400 text-xs mt-3 px-4 leading-relaxed">
+                    <i class="fa-solid fa-circle-info text-blue-400 mr-1"></i>
+                    <strong>Important:</strong> After joining the WhatsApp group, please reply with your <span class="text-white underline">Name, Mobile No. & Location</span> to confirm your interview slot.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function copyAddress() {
+            const addressText = document.getElementById('office-address').innerText;
+            
+            // Fallback for clipboard API
+            const textArea = document.createElement("textarea");
+            textArea.value = addressText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+
+            const msg = document.getElementById('copy-msg');
+            msg.classList.remove('opacity-0');
+            setTimeout(() => {
+                msg.classList.add('opacity-0');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
